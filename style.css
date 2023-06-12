@@ -1,0 +1,106 @@
+body {
+  background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/thumbs/1612190000_109-p-fioletovii-fon-odnotonnii-pastelnii-132.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Загальні стилі */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Стилі для заголовка */
+
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Стилі для навігації */
+
+nav {
+  background-color: hsl(269, 53%, 75%); /* Полоска */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 10px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #0a0a0b; /* Колір кнопок */
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #1d1c1c;
+  border-radius: 5px;
+}
+
+
+/* Стилі для секції */
+
+section {
+  padding: 20px;
+}
+
+.title {
+  color: #eef0f4; /* Колір заголовку */
+  font-size: 40px;
+  text-align: left;
+}
+#searchInput {
+  width: 250px;
+  height: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.signin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.signin button {
+  background-color: #4CAF50; /* Колір фону */
+  color: white; /* Колір тексту */
+  padding: 10px 20px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signin button:hover {
+  background-color: #45a049; /* Колір фону при наведенні */
+}
+.signup {
+  position: absolute;
+  top: 10px;
+  right: 105px;
+}
+
+.signup button {
+  background-color: #008CBA; /* Колір фону */
+  color: white; /* Колір тексту */
+  padding: 10px 20px;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
