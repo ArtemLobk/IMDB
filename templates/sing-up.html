@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}registration{% endblock %}
+
+{% block link %}
+<link
+      rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'style/sing-up.css')}}"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+{% endblock %}
+ 
+{% block body %}
+<div class="form">
+    <div class="tab-content">
+      <div id="signup">   
+        <h1>Sign Up </h1>
+        
+    <form method="POST">
+        
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              First Name<span class="req">*</span>
+            </label>
+            <input type="text" name="name" required autocomplete="off" />
+          </div>
+      
+          <div class="field-wrap">
+            <label>
+              Last Name<span class="req">*</span>
+            </label> 
+            <input type="text" name='last name' required autocomplete="off"/>
+          </div>
+        </div>
+
+        <div class="field-wrap">
+          <label>
+            Email Address<span class="req">*</span>
+          </label>
+          <input type="email" name='email address' required autocomplete="off"/>
+        </div>
+        
+        <div class="field-wrap">
+          <label>
+            Set A Password<span class="req">*</span>
+          </label>
+          <input type="password" name='password' required autocomplete="off"/>
+        </div>
+        
+        <button type="submit" class="button button-block"/>Get Started</button>
+    </form>        
+   
+
+      </div>
+      
+    </div>
+    
+</div>
+
+
+
+
+{% endblock %}
