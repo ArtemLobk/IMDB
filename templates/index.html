@@ -17,33 +17,31 @@
       <li><a href="#" onclick="showContent('topMovies')">Топ мультфільмів</a></li>
     </ul>
     <div class="search">
-      <div class="signin">
-        <button type="button" onclick="signIn()">Авторизація</button>
+      <div class="signup">
+        <a href="sing-up">Авторизація</a>
       </div>
-      <form id="searchForm" onsubmit="return search()">
-        <input type="text" id="searchInput" placeholder="Пошук...">
-        <button type="submit">Пошук</button>
-      </form>
+      <div class="search">
+        <div class="signin">
+          <a href="sing-in">Вхід</a>
+        </div>
+      <div>
+        <form id="searchForm" onsubmit="return search()">
+          <input type="text" id="searchInput" placeholder="Пошук...">
+          <button type="submit">Пошук</button>
+        </form>
+      </div>
     </div>
   </nav>
 
   <section id="topAnime" class="content">
     <h2>Топ аніме</h2>
-    <p>Контент сторінки"Топ аніме".</p>
+    <p>Контент сторінки "Топ аніме".</p>
   </section>
 
   <section id="topMovies" class="content" style="display: none;">
     <h2>Топ мультфільмів</h2>
     <p>Контент сторінки "Топ мультфільмів".</p>
   </section>
-  <section id="topAnime" class="content">
-    <!-- Вміст сторінки "Топ аніме" -->
-  </section>
-
-  <section id="topMovies" class="content" style="display: none;">
-    <!-- Вміст сторінки "Топ мультфільмів" -->
-  </section>
-  
 
   <script>
     function showContent(sectionId) {
