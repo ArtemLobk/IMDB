@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website anime</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1 class="title">IMDB</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="http://127.0.0.1:5000/topAnime" onclick="showContent('topAnime')">Топ аніме</a></li>
+      <li><a href="http://127.0.0.1:5000/topMovies" onclick="showContent('topMovies')">Топ мультфільмів</a></li>
+    </ul>
+    <div class="search">
+      <div class="signup">
+        <a href="sing-up">Авторизація</a>
+      </div>
+      <div class="search">
+        <div class="signin">
+          <a href="sing-in">Вхід</a>
+        </div>
+      <div>
+        <form id="searchForm" onsubmit="return search()">
+          <input type="text" id="searchInput" placeholder="Пошук...">
+          <button type="submit">Пошук</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <section id="topAnime" class="content">
+    <h2>Топ аніме</h2>
+    <p>Контент сторінки "Топ аніме".</p>
+  </section>
+
+  <section id="topMovies" class="content" style="display: none;">
+    <h2>Топ мультфільмів</h2>
+    <p>Контент сторінки "Топ мультфільмів".</p>
+  </section>
+
+  <script>
+    function showContent(sectionId) {
+      var contentElements = document.getElementsByClassName("content");
+
+      for (var i = 0; i < contentElements.length; i++) {
+        contentElements[i].style.display = "none";
+      }
+
+      var section = document.getElementById(sectionId);
+      section.style.display = "block";
+    }
+  </script>
+</body>
+</html>
