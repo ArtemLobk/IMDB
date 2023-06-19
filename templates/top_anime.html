@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Аніме</title>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #dcd0fd; 
-    }
-    
-    h1 {
-      color: rgb(0, 0, 0); 
-    }
-  </style>
+    <title>Top Anime</title>
 </head>
-<body>
-  <h1>Аніме</h1>
+<body style="background-color: #dcd0fd;">
+    <h1>Top Anime</h1>
+
+    {% for item in information %}
+        <div>
+            <h2>{{ item.find('h3').text }}</h2>
+            <p>{{ item.find('span', class_='runtime').text }}</p>
+            <p>{{ item.find('span', class_='genre').text }}</p>
+        </div>
+    {% endfor %}
+
+    {% for url in image_urls %}
+        <div>
+            <img src="{{ url }}" alt="Anime Image">
+        </div>
+    {% endfor %}
 </body>
 </html>
