@@ -1,3 +1,5 @@
+import requests
+from bs4 import BeautifulSoup
 from flask import Flask, Blueprint, render_template, request, jsonify, redirect, flash, session
 from flask_bcrypt import Bcrypt, check_password_hash
 from db import db_init, db
@@ -10,8 +12,13 @@ def home():
 
 @app.route('/topAnime')
 def top_anime():
-    return render_template('top_anime.html')
-
+    url = 'https://www.imdb.com/list/ls057577566/'
+    html = requests.get(url).text
+    soup = BeautifulSoup(html, 'lxml')
+    information = soup.find_all('div', class_="lister-item mode-detail")
+    images = soup.find_all('div', class_="lister-item-image ribbonize")
+    image_urls = [image.find('img')['src'] for image in images]
+    return render_template('top_anime.html', information=information, image_urls=image_urls)
 @app.route('/topMovies')
 def top_movies():
     return render_template('top_movies.html')
@@ -26,8 +33,7 @@ def Sing_up():
 
         bcrypt = Bcrypt()
         hashed_hui = bcrypt.generate_password_hash(password)
-
-        # save
+        
         save = Users(name = name, last_name=last_name, email = email_address, password = hashed_hui)
         db.session.add(save)
         db.session.commit()
