@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Мультфільми</title>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #dcd0fd; 
-    }
-    
-    h1 {
-      color: rgb(0, 0, 0); 
-    }
-  </style>
+    <title>Top Movies</title>
+    <style>
+        .movie {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .movie-image {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Мультфільми</h1>
+    <h1>Top Movies</h1>
+
+    {% for item in information %}
+        <div class="movie">
+            <img class="movie-image" src="{{ item.find('img')['loadlate'] }}" alt="Movie Image">
+            <div>
+                <h2>{{ item.find('span', class_='h4').text }}</h2>
+                <h2>{{ item.find('img')['alt'] }}</h2>
+                <p>{{ item.find('span', class_='h4 unbold').text }}</p>
+                <p>{{ item.find('span', class_='nowrap').text }}</p>
+                <p>{{ item.find('span', class_='certificate').text }}</p>
+                <p>{{ item.find('span', class_='runtime').text }}</p>
+                <p>{{ item.find('span', class_='genre').text }}</p>
+            </div>
+        </div>
+    {% endfor %}
 </body>
 </html>

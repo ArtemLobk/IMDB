@@ -19,9 +19,19 @@ def top_anime():
     images = soup.find_all('div', class_="lister-item-image ribbonize")
     image_urls = [image.find('img')['src'] for image in images]
     return render_template('top_anime.html', information=information, image_urls=image_urls)
+
 @app.route('/topMovies')
 def top_movies():
-    return render_template('top_movies.html')
+    url = 'https://m.imdb.com/list/ls051460362'
+    html = requests.get(url).text
+    soup = BeautifulSoup(html, 'lxml')
+    information = soup.find_all('div', class_="col-xs-12 col-md-6 lister-item mode-simple")
+
+    return render_template('top_movies.html', information=information)
+
+@app.route("/profile")
+def Profile():
+    return render_template("profile.html")
 
 @app.route('/sing-up')
 def Sing_up():

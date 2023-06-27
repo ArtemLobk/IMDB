@@ -1,62 +1,123 @@
 {% extends 'base.html' %}
-{% block title %}registration{% endblock %}
+{% block title %}Registration{% endblock %}
 
 {% block link %}
 <link
       rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'style/sing-up.css')}}"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f2f2f2;
+    }
+
+    .form {
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    .top-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .field-wrap {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .req {
+        color: red;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .button-block {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+</style>
 {% endblock %}
- 
+
 {% block body %}
 <div class="form">
     <div class="tab-content">
-      <div id="signup">   
-        <h1>Sign Up </h1>
-        
-    <form method="POST">
-        
-        <div class="top-row">
-          <div class="field-wrap">
-            <label>
-              First Name<span class="req">*</span>
-            </label>
-            <input type="text" name="name" required autocomplete="off" />
-          </div>
-      
-          <div class="field-wrap">
-            <label>
-              Last Name<span class="req">*</span>
-            </label> 
-            <input type="text" name='last name' required autocomplete="off"/>
-          </div>
-        </div>
+        <div id="signup">
+            <h1>Sign Up</h1>
 
-        <div class="field-wrap">
-          <label>
-            Email Address<span class="req">*</span>
-          </label>
-          <input type="email" name='email address' required autocomplete="off"/>
-        </div>
-        
-        <div class="field-wrap">
-          <label>
-            Set A Password<span class="req">*</span>
-          </label>
-          <input type="password" name='password' required autocomplete="off"/>
-        </div>
-        
-        <button type="submit" class="button button-block"/>Get Started</button>
-    </form>        
-   
+            <form method="POST">
 
-      </div>
-      
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            First Name<span class="req">*</span>
+                        </label>
+                        <input type="text" name="name" required autocomplete="off" />
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Last Name<span class="req">*</span>
+                        </label>
+                        <input type="text" name="last name" required autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input type="email" name="email address" required autocomplete="off" />
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Set A Password<span class="req">*</span>
+                    </label>
+                    <input type="password" name="password" required autocomplete="off" />
+                </div>
+
+                <button type="submit" class="button button-block">Get Started</button>
+            </form>
+        </div>
     </div>
-    
 </div>
-
-
-
-
 {% endblock %}
